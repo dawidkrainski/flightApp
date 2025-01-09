@@ -1,0 +1,105 @@
+.card-container {
+  position: relative;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+}
+
+.card-content {
+  width: 100%;
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+}
+
+
+.icon-container {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  width: 60px;
+  background: #fff;
+  border-radius: 50%;
+  z-index: 2;
+  border: 2px solid #007bff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+mat-icon {
+  color: #007bff; /* Akcent w kolorze niebieskim */
+  font-size: 28px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* Odstęp między miastami a strzałką */
+  font-size: 16px; /* Mniejszy rozmiar czcionki */
+  color: #555; /* Delikatny, ciemniejszy kolor */
+  font-weight: 500; /* Nowoczesny wygląd tekstu */
+}
+
+.card-header .city {
+  text-align: center;
+}
+
+.card-header {
+  display: flex;
+  justify-content: center; /* Wyśrodkowanie elementów w poziomie */
+  align-items: center; /* Wyśrodkowanie elementów w pionie */
+  margin-bottom: 10px; /* Odstęp dolny dla nagłówka */
+}
+
+.card-section {
+  display: flex;
+  gap: 10px; /* Odstęp między elementami (miastami i strzałką) */
+  align-items: center; /* Wyrównanie w pionie */
+}
+
+.card-header .origin,
+.card-header .destination {
+  padding-top: 25px;
+  font-size: 16px; /* Mniejszy rozmiar czcionki */
+  font-weight: 500; /* Lekko pogrubiony tekst */
+  color: #555; /* Neutralny ciemnoszary kolor */
+}
+
+.card-header .arrow {
+  padding-top: 25px;
+  font-size: 20px; /* Rozmiar strzałki większy niż tekst */
+  font-weight: bold; /* Pogrubienie strzałki */
+  color: #007bff; /* Delikatny akcent koloru */
+}
+
+.card-body {
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.time {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.card-container:hover {
+  transform: scale(1.03);
+  transition: transform 0.3s ease;
+}
+
+

@@ -1,0 +1,18 @@
+<div class="card-container">
+  <div class="icon-container shadow">
+    <mat-icon class="plane-icon">flight</mat-icon>
+  </div>
+  <div class="card-content shadow">
+    <div class="card-header">
+      <div class="card-section">
+        <p class="origin">{{ flight.origin }}</p>
+        <p class="arrow">→</p>
+        <p class="destination">{{ flight.destination }}</p>
+      </div>
+    </div>
+    <div class="card-body">
+      <p class="time"><strong>Departure:</strong> {{ flight.departureTime }}</p>
+      <p class="time"><strong>Return:</strong> {{ flight.returnTime }}</p>
+    </div>
+  </div>
+</div>
