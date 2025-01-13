@@ -1,0 +1,109 @@
+<form [formGroup]="form" class="minimal-form">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Code</mat-label>
+          <input matInput formControlName="code" placeholder="Code" #codeInput>
+          <mat-error *ngIf="form.get('code')?.hasError('required')">Code is required</mat-error>
+          <mat-error *ngIf="form.get('code')?.hasError('maxlength')">Maximum length is 7 chars</mat-error>
+          <mat-error *ngIf="form.get('code')?.hasError('minlength')">Minimum length is 4 chars</mat-error>
+          <mat-hint [align]="'end'">{{codeInput.value.length}} / 7</mat-hint>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Origin</mat-label>
+          <input matInput formControlName="origin" placeholder="Origin">
+          <mat-error>Origin is required</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-sm-6">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Destination</mat-label>
+          <input matInput formControlName="destination" placeholder="Destination">
+          <mat-error>Destination is required</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Departure Time</mat-label>
+          <input matInput [matDatepicker]="departurePicker" formControlName="departureDate" placeholder="Departure Date">
+          <mat-datepicker-toggle matSuffix [for]="departurePicker"></mat-datepicker-toggle>
+          <mat-datepicker #departurePicker></mat-datepicker>
+          <mat-error>Departure time is required</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Departure Hour</mat-label>
+          <input matInput type="time" formControlName="departureTime" placeholder="Departure Time">
+        </mat-form-field>
+      </div>
+      <div class="col-sm-6">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Return Date</mat-label>
+          <input matInput [matDatepicker]="returnPicker" formControlName="returnDate" placeholder="Return Date">
+          <mat-datepicker-toggle matSuffix [for]="returnPicker"></mat-datepicker-toggle>
+          <mat-datepicker #returnPicker></mat-datepicker>
+          <mat-error>Return time is required</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Return Hour</mat-label>
+          <input matInput type="time" formControlName="returnTime" placeholder="Return Time">
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Additional Information</mat-label>
+          <textarea matInput formControlName="additionalInformation" placeholder="Additional Information"></textarea>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-8">
+        <mat-checkbox formControlName="withSKPlanesDiscount">
+          With SK Discount
+        </mat-checkbox>
+      </div>
+    </div>
+
+    <div class="crew-container" formArrayName="crew" *ngFor="let crewMember of crew.controls; index as index">
+      <div class="row align-items-center pt-2">
+        <div class="col">
+          <span class="crew-title">Crew Member - {{index + 1}}</span>
+          <mat-icon class="delete-icon" (click)="removeCrewMember(index)">delete_forever</mat-icon>
+        </div>
+      </div>
+      <div class="row" [formGroupName]="index">
+        <div class="col-sm-6">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name" placeholder="Name">
+          </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Role</mat-label>
+            <mat-select placeholder="Role" formControlName="job">
+              <mat-option *ngFor="let job of jobs" [value]="job.value">{{job.label}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 pt-2">
+        <button mat-raised-button color="primary" (click)="addCrewMember()">Add crew member</button>
+      </div>
+    </div>
+  </div>
+</form>

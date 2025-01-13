@@ -1,1 +1,32 @@
 @import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+
+.toast-success {
+  --mat-mdc-snack-bar-button-color: #4CAF50 !important;
+  color: white;
+}
+
+.toast-error {
+  --mat-mdc-snack-bar-button-color: #F44336 !important;
+  color: white;
+}
+
+.mat-mdc-snack-bar-container {
+  &.toast-success {
+    --mdc-snackbar-container-color: #4CAF50;
+    --mat-mdc-snack-bar-button-color: #fff;
+    --mdc-snackbar-supporting-text-color: #fff;
+  }
+}
+
+.mat-mdc-snack-bar-container {
+  &.toast-error {
+    --mdc-snackbar-container-color: #F44336;
+    --mat-mdc-snack-bar-button-color: #fff;
+    --mdc-snackbar-supporting-text-color: #fff;
+  }
+}
+
+body {
+  background-color: #e1dede !important;
+}

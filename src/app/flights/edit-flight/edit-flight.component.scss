@@ -1,0 +1,25 @@
+.text-right{
+    text-align: right;
+  margin-bottom: 16px;
+  margin-top: 24px;
+  margin-right: 280px;
+}
+
+.plane-icon {
+  vertical-align: middle;
+  font-size: 24px;
+  margin-right: 8px;
+  color: #1976d2;
+  transform: rotate(90deg);
+  display: inline-block;
+  margin-left: 280px;
+}
+
+.delete-icon {
+  color: #f44336;
+  cursor: pointer;
+  float: right;
+  font-size: 25px;
+  margin-top: 30px;
+  margin-right: 280px;
+}

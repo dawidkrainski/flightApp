@@ -1,0 +1,16 @@
+<div class="row flight-details-container">
+  <div class="col">
+    <div class="flight-header">
+      <h3 class="flight-title">Flight Details</h3>
+      <mat-icon class="close-icon" (click)="onClose()">close</mat-icon>
+    </div>
+    <div class="flight-info">
+      <p class="label"><strong>Code:</strong> {{flight.code}}</p>
+      <p class="label"><strong>Crew:</strong></p>
+      <ul class="crew-list">
+        <li class="crew-member" *ngFor="let member of flight.crew">{{member.name}} : {{member.job}}</li>
+      </ul>
+    </div>
+    <button mat-raised-button color="primary" class="edit-button" (click)="goToEditFlight()">Edit Flight</button>
+  </div>
+</div>

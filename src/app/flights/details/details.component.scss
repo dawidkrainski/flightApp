@@ -1,0 +1,79 @@
+
+
+
+ .flight-details-container {
+   padding: 10px;
+   background-color: #f9f9f9;
+   border-radius: 10px;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   font-family: 'Roboto', sans-serif;
+   max-width: 480px;
+   margin: 10px auto;
+ }
+
+.flight-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.flight-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.close-icon {
+  color: #757575;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 4px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.close-icon:hover {
+  color: #000;
+  background-color: #e0e0e0;
+}
+
+.flight-info {
+  margin-bottom: 15px;
+}
+
+.label {
+  font-size: 14px;
+  color: #555;
+  margin: 5px 0;
+}
+
+.crew-list {
+  list-style: none;
+  padding: 0;
+  margin: 5px 0;
+}
+
+.crew-member {
+  font-size: 14px;
+  color: #333;
+  background-color: #e0f7fa;
+  padding: 8px 12px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+.edit-button {
+  display: block;
+  margin-left: auto;
+  background-color: #1976d2;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 8px 16px;
+}
+
+.edit-button:hover {
+  background-color: #1565c0;
+}

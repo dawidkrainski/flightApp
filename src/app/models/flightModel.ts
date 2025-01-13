@@ -9,7 +9,7 @@ export interface Flight {
   withSKPlanesDiscount: boolean;
   key: string;
 }
-interface Crew {
+export interface Crew {
   job: string;
   name: string;
 }
