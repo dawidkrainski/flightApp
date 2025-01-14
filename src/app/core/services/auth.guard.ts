@@ -1,22 +1,19 @@
-import {ActivatedRoute, ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot,} from '@angular/router';
-import {Injectable} from "@angular/core";
-import {Observable} from "rxjs";
-import {AuthService} from "./auth.service";
-import {MatSnackBar} from "@angular/material/snack-bar";
+import { Injectable } from "@angular/core";
+import { CanActivate, Router, RouterStateSnapshot, ActivatedRouteSnapshot } from "@angular/router";
+import { AuthService } from "./auth.service";
+import { MatSnackBar } from "@angular/material/snack-bar";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
+export class AuthGuard implements CanActivate {
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private toast: MatSnackBar
+  ) {}
 
-export class authGuard implements CanActivate {
-
-  constructor(private authService: AuthService,
-              private router: Router,
-              private toast: MatSnackBar) {
-  }
-
-  canActivate(
-    next: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+  canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     if (this.authService.isLoggedIn()) {
       return true;
     }

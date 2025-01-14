@@ -4,8 +4,14 @@ import firebase from "firebase/compat";
 import UserInfo = firebase.UserInfo;
 import {Router} from "@angular/router";
 
+export interface Credentials {
+  email: string;
+  password: string;
+}
+
+
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
   private userData: UserInfo | null = null;
@@ -13,7 +19,7 @@ export class AuthService {
   constructor(private fireAuth: AngularFireAuth, private router: Router) {
   }
 
-  login(credentials: {email: string, password: string}) {
+  login(credentials: Credentials) {
     return this.fireAuth.signInWithEmailAndPassword(credentials.email, credentials.password).
     then(userCredential => this.userData = userCredential.user);
   }
@@ -26,11 +32,11 @@ export class AuthService {
     return this.userData;
   }
 
-  isLoggedIn() {
-    return !!this.userData;
+  isLoggedIn(): boolean {
+    return this.userData !== null;
   }
 
-  register(credentials: {email: string, password: string}) {
+  register(credentials: Credentials) {
     return this.fireAuth.createUserWithEmailAndPassword(credentials.email, credentials.password)
   }
 

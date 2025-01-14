@@ -7,14 +7,12 @@ import {MAT_DIALOG_DEFAULT_OPTIONS, MatDialogConfig, MatDialogModule} from "@ang
 import {MatButtonModule} from "@angular/material/button";
 import {
   MAT_SNACK_BAR_DEFAULT_OPTIONS,
-  MatSnackBar,
   MatSnackBarConfig,
   MatSnackBarModule
 } from "@angular/material/snack-bar";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatSelectModule} from "@angular/material/select";
 import {MatToolbarModule} from "@angular/material/toolbar";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
 
@@ -34,7 +32,6 @@ const MATERIAL_MODULES = [
   MatIconModule,
   MatCardModule,
   MatFormFieldModule,
-  BrowserAnimationsModule,
   MatDatepickerModule,
   MatNativeDateModule,
   MatInputModule,

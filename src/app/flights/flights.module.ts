@@ -9,8 +9,8 @@ import {MaterialModule} from "../material/material.module";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import { DetailsComponent } from './details/details.component';
 import { EditFlightComponent } from './edit-flight/edit-flight.component';
-import {RouterLink} from "@angular/router";
 import {AngularFireAuthModule} from "@angular/fire/compat/auth";
+import {FlightsRoutingModule} from "./flights-routing.module";
 
 @NgModule({
   imports: [
@@ -20,9 +20,18 @@ import {AngularFireAuthModule} from "@angular/fire/compat/auth";
     ReactiveFormsModule,
     AngularFireAuthModule,
     MatDatepickerModule,
-    RouterLink,
+    FlightsRoutingModule,
   ],
-  declarations: [FlightsComponent, FlightCardComponent, NewFlightComponent, FlightFormComponent, DetailsComponent, EditFlightComponent],
-  exports: [FlightsComponent]
+  declarations: [
+    FlightsComponent,
+    FlightCardComponent,
+    NewFlightComponent,
+    FlightFormComponent,
+    DetailsComponent,
+    EditFlightComponent,
+  ],
+  exports: [FlightsComponent],
 })
-export class FlightsModule { }
+export class FlightsModule {
+
+}

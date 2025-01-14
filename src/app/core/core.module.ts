@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import {RouterModule} from '@angular/router';
 import {MaterialModule} from '../material/material.module';
 import {FormsModule} from "@angular/forms";
+import { WildCardComponent } from './wild-card/wild-card.component';
 
 @NgModule({
   imports: [
@@ -13,6 +14,6 @@ import {FormsModule} from "@angular/forms";
     MaterialModule,
     FormsModule,
   ],
-  declarations: [DashboardComponent, LoginComponent]
+  declarations: [DashboardComponent, LoginComponent, WildCardComponent]
 })
 export class CoreModule { }

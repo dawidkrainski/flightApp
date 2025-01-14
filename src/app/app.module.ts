@@ -10,6 +10,8 @@ import {MaterialModule} from "./material/material.module";
 import {CoreModule} from "./core/core.module";
 import {FlightsModule} from "./flights/flights.module";
 import {FlightsService} from "./core/services/flights.service";
+import {AuthService} from "./core/services/auth.service";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -21,10 +23,10 @@ import {FlightsService} from "./core/services/flights.service";
     BrowserModule,
     MaterialModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     CoreModule,
-    FlightsModule,
   ],
-  providers: [FlightsService],
+  providers: [FlightsService,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
